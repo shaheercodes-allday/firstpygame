@@ -7,7 +7,7 @@ pygame.init()
 
 # Frame Per Second to ensure the game won't run too fast
 FPS = 60
-DISPLAY_WIDTH, DISPLAY_HEIGHT = 550, 430
+DISPLAY_WIDTH, DISPLAY_HEIGHT = 576, 350
 
 # Create a display surface and set the size of the window 
 screen = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT)) 
@@ -21,7 +21,13 @@ pygame.display.set_caption("First Game")
 
 # Create required surfaces
 sky_surface = pygame.image.load("graphics/purple-sky.png")
+ground_surface = pygame.image.load("graphics/ground.png")
 text_surface = font.render("Hello, Pygame!", False, "white")
+
+rogue_surface = pygame.image.load("characters/Rogue/rogue.png")
+# Create rectangle and bind it to the rogue_surface 
+# to control positioning more easily
+rogue_rect = rogue_surface.get_rect(bottomleft = (10, 250))
 
 while True:
     # The event loop
@@ -32,7 +38,10 @@ while True:
 
     # Draw images
     screen.blit(sky_surface, (0, 0))
-    screen.blit(text_surface, (170, 50))
+    screen.blit(text_surface, (175, 50))
+    screen.blit(ground_surface, (0, 250))
+    # Rogue suraface has the position coordinates of its rectangle
+    screen.blit(rogue_surface, rogue_rect)
 
     # Update the window
     pygame.display.update()
