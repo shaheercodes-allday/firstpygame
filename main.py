@@ -7,7 +7,7 @@ pygame.init()
 
 # Frame Per Second to ensure the game won't run too fast
 FPS = 60
-DISPLAY_WIDTH, DISPLAY_HEIGHT = 550, 420
+DISPLAY_WIDTH, DISPLAY_HEIGHT = 550, 440
 
 # Create a display surface and set the size of the window 
 screen = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT)) 
