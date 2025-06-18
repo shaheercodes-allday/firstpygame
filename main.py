@@ -7,15 +7,21 @@ pygame.init()
 
 # Frame Per Second to ensure the game won't run too fast
 FPS = 60
-DISPLAY_WIDTH, DISPLAY_HEIGHT = 800, 500
+DISPLAY_WIDTH, DISPLAY_HEIGHT = 550, 420
 
 # Create a display surface and set the size of the window 
 screen = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT)) 
 # Clock to control time (FPS)
 clock = pygame.time.Clock()
+# Setting up the font
+font = pygame.font.Font("fonts/joystix.otf", 20)
 
 # Set the window caption
 pygame.display.set_caption("First Game")
+
+# Create required surfaces
+sky_surface = pygame.image.load("graphics/purple-sky.png")
+text_surface = font.render("Hello, Pygame!", False, "white")
 
 while True:
     # The event loop
@@ -25,6 +31,8 @@ while True:
             exit()
 
     # Draw images
+    screen.blit(sky_surface, (0, 0))
+    screen.blit(text_surface, (170, 50))
 
     # Update the window
     pygame.display.update()
