@@ -1,1 +1,1 @@
-blue
+rogue_stand_rect
